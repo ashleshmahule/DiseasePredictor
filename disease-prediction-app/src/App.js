@@ -16,11 +16,29 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Welcome
         </a>
       </header>
     </div>
   );
+}
+
+function getDisease(symptoms) {
+  fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + symptoms)
+    .then(async response => {
+      const data = await response.json();
+
+      if (!response.ok) {
+        const error = (data && data.message) || response.statusText;
+        return Promise.reject(error);
+      }
+
+      
+    })
+    .catch(error => {
+      this.setState({ errorMessage: error.toString() });
+      console.error('There was an error!', error);
+    })
 }
 
 export default App;
