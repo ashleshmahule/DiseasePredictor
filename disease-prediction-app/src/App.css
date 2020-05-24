@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-image: url("../src/heartbeat.jpg");
+  color: #FFFFFF;
+  font-size: 150%;
+}
+
+
+.App-header {  
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
