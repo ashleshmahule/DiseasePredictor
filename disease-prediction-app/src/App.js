@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import NavbarHead from './NavbarHead';
+import NavbarHead from './Components/NavbarHead';
 import Main from './Main';
 
 function App() {
@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <Main />
-      {/*<GetDisease symp='cough'/> */}
     </div>
   );
 }

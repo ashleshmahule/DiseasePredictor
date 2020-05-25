@@ -8,3 +8,7 @@ a {
 a:hover {
     color: rgb(209, 209, 209);
 }
+
+.brand {
+    font-size: 100%;
+}

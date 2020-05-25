@@ -1,0 +1,41 @@
+#cont {
+    margin-top: 13%;
+}
+
+#symp-1 {
+    font-size: 170%;
+    margin: 2%;
+}
+
+#symp2 {
+    margin: 1%;
+}
+
+#warn {
+    margin: 1%;
+}
+
+#form {
+    margin: 2% !important;
+}
+
+#check {
+    margin: 2%;
+    font-size: 100%;
+}
+
+.inputSym {
+    float: none;
+    display: inline-block;
+    align-items: center;
+    align-self: center;
+    padding: 1%;
+}
+
+#SymptomsInput {
+    font-size: 75%;
+}
+
+#SymptomsInput::placeholder {
+    font-size: 100%;
+  }

@@ -7,8 +7,10 @@ import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container'
-import './FormClass.css'
+import Container from 'react-bootstrap/Container';
+import './FormClass.css';
+import Button from 'react-bootstrap/Button';
+import GetDisease from './GetDisease';
 
 
 class FormClass extends React.Component {
@@ -150,35 +152,74 @@ class FormClass extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            showComponent: false
+        }
+        this.syms = [];
+        this.GetDiseaseDisp = null;
+        this.handleChange = this.handleChange.bind(this);
+        this.Predict = this.Predict.bind(this);
+        this.toSend = '';
+        this._onButtonClick = this._onButtonClick.bind(this);
     }
 
-    appendInput() {
 
+    handleChange = selectedOptions => {
+        console.log(selectedOptions);
+        this.syms = selectedOptions;
+        console.log(this.syms);
+    }
+
+
+    _onButtonClick() {
+        this.setState({
+            showComponent: true,
+        });
+    }
+
+
+    Predict() {
+        this.toSend = this.syms.map((item) => `${item}`).join(',');
+        console.log(this.toSend);
+        return (
+            <>
+                <GetDisease symp={this.toSend} />
+            </>
+        );
     }
 
     render() {
         const SymptomsInput = (props) => (
             <>
-                <Container>
-                    
-
-                    <Row id="symp" className="justify-content-md-center">
-                        <Col sm="6" md="6" lg="6">
+                <Container id='cont'>
+                    <Row noGutters id="symp-1" className="justify-content-md-center">
+                        <Col sm="9" md="9" lg="9">
                             <Form.Label>
                                 Choose The Symptoms You Have Been Experiencing Lately
                         </Form.Label>
                         </Col>
-                        <Col sm="6" md="6" lg="6">
+                    </Row>
+                    <Row id="symp-2" className="justify-content-md-center">
+                        <Col className="justify-content-md-center inputSym" sm="6" md="6" lg="6">
                             <Typeahead
+                                size="lg"
                                 clearButton
                                 id="SymptomsInput"
                                 labelKey="name"
                                 multiple
                                 options={this.symptoms}
-                                placeholder="Choose Your Symptoms..."
+                                placeholder="Start Typing"
+                                onChange={this.handleChange}
                             />
                         </Col>
                     </Row>
+                    <Row id="warn">
+                        <Col>
+                            Try to choose as much symptoms as possible.
+                        </Col>
+                    </Row>
+                    <Button onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
+                    {this.state.showComponent ? <this.Predict /> : null}
                 </Container>
             </>
         );

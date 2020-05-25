@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarHead from './NavbarHead';
+import NavbarHead from './Components/NavbarHead';
 import './Home.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Form from 'react-bootstrap/Form'
@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
 import { Link } from "react-router-dom";
-
 
 
 class Home extends React.Component {
@@ -40,7 +39,6 @@ class Home extends React.Component {
                         </Col>
                     </Row>
                 </Form>
-
 
                 <Link to='/DiseasePrediction'>
                     <Button className="gs" variant="light">Get Started</Button>

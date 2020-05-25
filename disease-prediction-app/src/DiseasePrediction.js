@@ -1,8 +1,9 @@
 import React from 'react';
-import FormClass from './FormClass';
-import NavbarHead from './NavbarHead';
+import FormClass from './Components/FormClass';
+import NavbarHead from './Components/NavbarHead';
 
 function DiseasePrediction() {
+
     return (
         <>
             <NavbarHead />
