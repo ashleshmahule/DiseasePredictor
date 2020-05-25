@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
+import './FormClass.css'
 
 
 class FormClass extends React.Component {
@@ -159,20 +160,15 @@ class FormClass extends React.Component {
         const SymptomsInput = (props) => (
             <>
                 <Container>
-                    <Form>
-                        <Form.Group as={Form.Row} controlId="formHorizontalEmail">
-                            <Row>
-                                <Col>
-                                    <Form.Control type="text" placeholder="Enter Your Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Form>
-                    <Row>
-                        <Form.Label column sm="4" md="4" lg="4">
-                            Choose The Symptoms You Have Been Experiencing Lately
+                    
+
+                    <Row id="symp" className="justify-content-md-center">
+                        <Col sm="6" md="6" lg="6">
+                            <Form.Label>
+                                Choose The Symptoms You Have Been Experiencing Lately
                         </Form.Label>
-                        <Col>
+                        </Col>
+                        <Col sm="6" md="6" lg="6">
                             <Typeahead
                                 clearButton
                                 id="SymptomsInput"
