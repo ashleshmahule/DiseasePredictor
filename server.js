@@ -32,7 +32,7 @@ server1.listen(PORT, err => {
   console.log("SERVER STARTED");
 });
 
-server2.listen(PORT, 'https://diseasepredictorapp.herokuapp.com/ShowMore', err => {
+server2.listen(PORT, '/ShowMore', err => {
   if (err) throw err;
   console.log('listening');
-})
+});
