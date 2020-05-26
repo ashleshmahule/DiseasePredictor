@@ -26,10 +26,6 @@ class GetDisease extends Component {
         var { disease } = this.state;
         console.log({ disease });
 
-        if(disease!=null) {
-            disease=disease.replace('_',' ')
-        }
-
         return (
             <>
                 <Container>
