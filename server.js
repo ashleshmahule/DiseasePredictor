@@ -22,18 +22,10 @@ app.use(function (req, res, next) {
 });
 
 
-const server1 = createServer(app);
+const server = createServer(app);
 
 
-
-server1.listen(PORT, err => {
+server.listen(PORT, err => {
   if (err) throw err;
   console.log("SERVER STARTED");
-});
-
-const server2 = createServer(app);
-
-server2.listen('diseasepredictorapp.herokuapp.com/ShowMore',  err => {
-  if (err) throw err;
-  console.log('listening');
 });
