@@ -16,12 +16,19 @@ app.get("*", (req, res) => {
 });
 const server = createServer(app);
 
+server.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 server.listen(PORT, err => {
   if (err) throw err;
   console.log("SERVER STARTED");
 });
 
 server.listen(PORT, 'https://diseasepredictorapp.herokuapp.com/ShowMore', err => {
-  if(err) throw err;
+  if (err) throw err;
   console.log('listening');
 })

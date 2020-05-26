@@ -13,6 +13,8 @@ class GetDisease extends Component {
         this.state = {
             disease: null
         };
+        this.SendData=this.SendData.bind(this);
+        this.GetFromFlask=this.GetFromFlask.bind(this);
     }
 
     async GetFromFlask() {
