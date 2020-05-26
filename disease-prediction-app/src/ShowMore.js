@@ -15,3 +15,5 @@ class ShowMore extends React.Component {
         );
     }
 }
+
+export default ShowMore;

@@ -11,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 import './FormClass.css';
 import Button from 'react-bootstrap/Button';
 import GetDisease from './GetDisease';
+import { Link } from "react-router-dom";
 
 
 class FormClass extends React.Component {
@@ -161,6 +162,7 @@ class FormClass extends React.Component {
         this.Predict = this.Predict.bind(this);
         this.toSend = '';
         this._onButtonClick = this._onButtonClick.bind(this);
+        this.disease='';
     }
 
 
@@ -186,6 +188,16 @@ class FormClass extends React.Component {
                 <GetDisease symp={this.toSend} />
             </>
         );
+    }
+
+    _redirectToShowMore() {
+        this.disease=GetDisease.GetState;
+        console.log(this.disease);
+
+        this.context.router.push({
+            pathname: '/ShowMore',
+            state: { yourCalculatedData: this.disease }
+        });
     }
 
     render() {
@@ -219,7 +231,15 @@ class FormClass extends React.Component {
                         </Col>
                     </Row>
                     <Button onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
-                    {this.state.showComponent ? <this.Predict /> : null}
+                    {this.state.showComponent ? <>
+                        <this.Predict />
+                        <Row>
+                            <Col>
+                                <Button as={Link} to="/ShowMore" onClick={this._redirectToShowMore} variant="dark">Know More!</Button>
+                            </Col>
+                        </Row>
+                    </>
+                        : null}
                 </Container>
             </>
         );

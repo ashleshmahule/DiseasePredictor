@@ -27,7 +27,7 @@ function NavbarHead() {
             </NavDropdown> */}
         </Nav>
       <Nav>
-        <Nav.Link eventKey={2} href="https://ashleshmahule.me/">Developer</Nav.Link>
+        <Nav.Link eventKey={2} href="https://ashleshmahule.me/" className="lnk">Developer</Nav.Link>
       </Nav>
       </Navbar.Collapse>
     </Navbar >

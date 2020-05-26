@@ -10,5 +10,9 @@ a:hover {
 }
 
 .brand {
-    font-size: 100%;
+    font-size: 75%;
+}
+
+.lnk {
+    font-size: 75%;
 }

@@ -1,0 +1,34 @@
+{
+  "name": "diseasepredictor",
+  "version": "1.0.0",
+  "description": "disease prediction built with flask and react",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleshmahule/DiseasePredictor.git"
+  },
+  "keywords": [
+    "disease",
+    "predicton",
+    "react",
+    "flask",
+    "mern"
+  ],
+  "author": "ashleshmahule15@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashleshmahule/DiseasePredictor/issues"
+  },
+  "homepage": "https://github.com/ashleshmahule/DiseasePredictor#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  }
+}

@@ -21,10 +21,31 @@ class GetDisease extends Component {
             .then(data => this.setState({ disease: data.disease }));
     }
 
+    SendData() {
+        return fetch('https://diseasepredictorapp.herokuapp.com/ShowMore', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstParam: this.state,
+                secondParam: null,
+            })
+        }).then((response) => response.json())
+            .then((responseJson) => {
+                return responseJson.success;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
     render() {
         this.GetFromFlask();
         var { disease } = this.state;
         console.log({ disease });
+        this.SendData();
 
         return (
             <>
