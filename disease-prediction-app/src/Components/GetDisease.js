@@ -21,24 +21,15 @@ class GetDisease extends Component {
             .then(data => this.setState({ disease: data.disease }));
     }
 
-    SendData() {
-        return fetch('https://diseasepredictorapp.herokuapp.com/ShowMore', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstParam: this.state,
-                secondParam: null,
-            })
-        }).then((response) => response.json())
-            .then((responseJson) => {
-                return responseJson.success;
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+    async SendData() {
+        try {
+            var xhr=new XMLHttpRequest();
+            xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/ShowMore');
+            xhr.send(JSON.stringify({ result: this.state }));
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 
     render() {

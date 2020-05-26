@@ -191,7 +191,10 @@ class FormClass extends React.Component {
     }
 
     _redirectToShowMore() {
-        this.disease=GetDisease.GetState;
+        fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
+        .then(response => response.json())
+        .then(data => this.disease=data);
+
         console.log(this.disease);
 
         this.context.router.push({

@@ -20,3 +20,8 @@ server.listen(PORT, err => {
   if (err) throw err;
   console.log("SERVER STARTED");
 });
+
+server.listen(PORT, 'https://diseasepredictorapp.herokuapp.com/ShowMore', err => {
+  if(err) throw err;
+  console.log('listening');
+})
