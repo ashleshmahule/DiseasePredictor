@@ -190,10 +190,11 @@ class FormClass extends React.Component {
         );
     }
 
-    _redirectToShowMore() {
-        fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
+    async _redirectToShowMore() {
+        await fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
         .then(response => response.json())
-        .then(data => this.disease=data);
+        .then(data => {console.log(data); 
+            this.disease=data});
 
         console.log(this.disease);
 

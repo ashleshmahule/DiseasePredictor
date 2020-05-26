@@ -7,6 +7,7 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
 const app = express();
 var cors = require('cors');
+cors({credentials: true, origin: true})
 app.use(cors());
 
 app.use(compression());
