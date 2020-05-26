@@ -23,7 +23,7 @@ class GetDisease extends Component {
 
     render() {
         this.GetFromFlask();
-        const { disease } = this.state;
+        var { disease } = this.state;
         console.log({ disease });
 
         if(disease!=null) {
