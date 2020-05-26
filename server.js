@@ -31,6 +31,6 @@ server.listen(PORT, err => {
 });
 
 app.post('/ShowMore', function (req, res) {
-  if(err) throw err;
+  
   console.log('posting');
 });

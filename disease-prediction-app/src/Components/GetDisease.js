@@ -26,7 +26,7 @@ class GetDisease extends Component {
     async SendData() {
         try {
             var xhr=new XMLHttpRequest();
-            xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/');
+            xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/ShowMore');
             xhr.send(JSON.stringify({ result: this.state }));
         }
         catch (error) {
