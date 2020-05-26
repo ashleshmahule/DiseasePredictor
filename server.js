@@ -29,3 +29,8 @@ server.listen(PORT, err => {
   if (err) throw err;
   console.log("SERVER STARTED "+PORT);
 });
+
+app.post('/ShowMore', function (req, res) {
+  if(err) throw err;
+  console.log('posting');
+});
