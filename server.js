@@ -23,10 +23,8 @@ app.use(function (req, res, next) {
 });
 
 
-const server = createServer(app);
 
-
-server.listen(PORT, err => {
+app.listen(PORT, err => {
   if (err) throw err;
   console.log("SERVER STARTED "+PORT);
 });
