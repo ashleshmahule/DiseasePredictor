@@ -13,19 +13,29 @@ class GetDisease extends Component {
         this.state = {
             disease: null
         };
-        this.SendData=this.SendData.bind(this);
-        this.GetFromFlask=this.GetFromFlask.bind(this);
+        this.SendData = this.SendData.bind(this);
+        this.GetFromFlask = this.GetFromFlask.bind(this);
     }
 
     async GetFromFlask() {
-        fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + this.symptoms)
-            .then(response => response.json())
-            .then(data => this.setState({ disease: data.disease }));
+        let dname = localStorage.getItem("diseaseName");
+
+        if (dname) {
+            dname = JSON.parse(dname);
+            this.setState({ dname });
+        } else {
+            fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + this.symptoms)
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({ disease: data.disease });
+                    localStorage.setItem("dname", JSON.stringify(dname));
+                });
+        }
     }
 
     async SendData() {
         try {
-            var xhr=new XMLHttpRequest();
+            var xhr = new XMLHttpRequest();
             xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/ShowMore');
             xhr.send(JSON.stringify({ result: this.state }));
         }
