@@ -14,13 +14,17 @@ app.use(express.static(path.resolve(__dirname, "disease-prediction-app/build")))
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "disease-prediction-app/build", "index.html"));
 });
-const server = createServer(app);
 
-server.use(function (req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+
+const server = createServer(app);
+
+
 
 
 server.listen(PORT, err => {
