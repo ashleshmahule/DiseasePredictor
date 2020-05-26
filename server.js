@@ -27,5 +27,5 @@ const server = createServer(app);
 
 server.listen(PORT, err => {
   if (err) throw err;
-  console.log("SERVER STARTED");
+  console.log("SERVER STARTED "+PORT);
 });
