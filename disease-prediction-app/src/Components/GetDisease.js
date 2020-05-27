@@ -13,7 +13,7 @@ class GetDisease extends Component {
         this.state = {
             disease: null
         };
-        this.SendData = this.SendData.bind(this);
+        // this.SendData = this.SendData.bind(this);
         this.GetFromFlask = this.GetFromFlask.bind(this);
     }
 
@@ -33,11 +33,12 @@ class GetDisease extends Component {
         }
     }
 
-    async SendData() {
+    componentDidUpdate() {
         try {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/ShowMore');
-            xhr.send(JSON.stringify({ result: this.state }));
+            xhr.send(JSON.stringify({ result: this.state.disease }));
+            console.log('sent '+this.state.disease);
         }
         catch (error) {
             console.error(error);
@@ -48,7 +49,7 @@ class GetDisease extends Component {
         this.GetFromFlask();
         var { disease } = this.state;
         console.log({ disease });
-        this.SendData();
+        // this.SendData();
 
         return (
             <>

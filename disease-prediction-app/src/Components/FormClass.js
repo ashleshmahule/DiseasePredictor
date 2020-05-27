@@ -162,7 +162,9 @@ class FormClass extends React.Component {
         this.Predict = this.Predict.bind(this);
         this.toSend = '';
         this._onButtonClick = this._onButtonClick.bind(this);
-        this.disease='';
+        this.disease = '';
+        this._isMounted = false;
+
     }
 
 
@@ -181,27 +183,34 @@ class FormClass extends React.Component {
 
 
     Predict() {
-        this.toSend = this.syms.map((item) => `${item}`).join(',');
-        console.log(this.toSend);
+        this._isMounted = true;
+
+        if (this._isMounted) {
+            this.toSend = this.syms.map((item) => `${item}`).join(',');
+            console.log(this.toSend);
+        }
         return (
             <>
-                <GetDisease symp={this.toSend} />
+                {this._isMounted ? <GetDisease symp={this.toSend} /> : null}
             </>
         );
     }
 
-    async _redirectToShowMore() {
-        await fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
-        .then(response => response.json())
-        .then(data => {console.log(data); 
-            this.disease=data});
+    componentDidMount() {
+        fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.disease = data;
+            });
+    }
 
-        console.log(this.disease);
+    _redirectToShowMore() {
 
-        this.context.router.push({
-            pathname: '/ShowMore',
-            state: { yourCalculatedData: this.disease }
-        });
+        // this.context.router.push({
+        //     pathname: '/ShowMore',
+        //     state: { yourCalculatedData: this.disease }
+        // });
     }
 
     render() {
