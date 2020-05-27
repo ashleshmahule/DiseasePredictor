@@ -196,14 +196,14 @@ class FormClass extends React.Component {
         );
     }
 
-    componentDidUpdate() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-            .then(response => response.json)
-            .then(data => {
-                console.log(data.data);
-                this.disease = data.data;
-            });
-    }
+    // componentDidUpdate() {
+    //     fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+    //         .then(response => response.json)
+    //         .then(data => {
+    //             console.log(data.data);
+    //             this.disease = data.data;
+    //         });
+    // }
 
     _redirectToShowMore() {
 
@@ -214,6 +214,15 @@ class FormClass extends React.Component {
     }
 
     render() {
+
+
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+        .then(response => response.json)
+        .then(data => {
+            console.log(data.data);
+            this.disease = data.data;
+        });
+
         const SymptomsInput = (props) => (
             <>
                 <Container id='cont'>
