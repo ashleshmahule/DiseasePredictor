@@ -198,9 +198,9 @@ class FormClass extends React.Component {
 
     _redirectToShowMore() {
 
-        this.context.router.push({
-            pathname: '/ShowMore'
-        });
+        // this.context.router.push({
+        //     pathname: '/ShowMore'
+        // });
     }
 
     render() {
