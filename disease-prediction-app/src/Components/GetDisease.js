@@ -33,6 +33,10 @@ class GetDisease extends Component {
         }
     }
 
+    componentDidMount() {
+        this.GetFromFlask();
+    }
+
     componentDidUpdate() {
         try {
             var xhr = new XMLHttpRequest();
@@ -46,7 +50,7 @@ class GetDisease extends Component {
     }
 
     render() {
-        this.GetFromFlask();
+        
         var { disease } = this.state;
         console.log({ disease });
         // this.SendData();
@@ -56,7 +60,7 @@ class GetDisease extends Component {
                 <Container>
                     <Row className="justify-content-md-center predicted">
                         <Col sm="6" md="6" lg="6">
-                            Predicted Disease: {disease}
+                            Predicted Disease: {this.state.disease}
                         </Col>
                     </Row>
                 </Container>
