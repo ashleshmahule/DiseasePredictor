@@ -164,7 +164,6 @@ class FormClass extends React.Component {
         this._onButtonClick = this._onButtonClick.bind(this);
         this.disease = '';
         this._isMounted = false;
-        this.FetchData = this.FetchData.bind(this);
     }
 
 
@@ -196,17 +195,8 @@ class FormClass extends React.Component {
         );
     }
 
-    FetchData() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-            .then(response => response)
-            .then(data => {
-                console.log(data);
-                this.disease = data;
-            });
-    }
 
     _redirectToShowMore() {
-        this.FetchData();
         // this.context.router.push({
         //     pathname: '/ShowMore',
         //     state: { yourCalculatedData: this.disease }
@@ -214,6 +204,14 @@ class FormClass extends React.Component {
     }
 
     render() {
+
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+            .then(response => response)
+            .then(data => {
+                console.log(data);
+                this.disease = data;
+            });
+
         const SymptomsInput = (props) => (
             <>
                 <Container id='cont'>
