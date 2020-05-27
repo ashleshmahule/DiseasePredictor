@@ -196,7 +196,7 @@ class FormClass extends React.Component {
         );
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
             method: 'POST'
         })
