@@ -39,18 +39,7 @@ class GetDisease extends Component {
 
     componentDidUpdate() {
         if (this.state.disease != null) {
-            fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
-                method: "GET",
-                mode: "no-cors",
-                cache: "no-cache",
-                credentials: "same-origin",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                redirect: "follow",
-                referrer: "no-referrer",
-                body: JSON.stringify(this.state.disease),
-            });
+            fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query='+this.state.disease);
             console.log('sent ' + this.state.disease);
         }
     }
