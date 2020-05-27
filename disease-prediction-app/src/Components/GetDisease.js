@@ -38,19 +38,21 @@ class GetDisease extends Component {
     }
 
     componentDidUpdate() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
-            method: "POST",
-            mode: "no-cors",
-            cache: "no-cache",
-            credentials: "same-origin",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            redirect: "follow",
-            referrer: "no-referrer",
-            body: JSON.stringify(this.state.disease),
-        });
-        console.log('sent ' + this.state.disease);
+        if (this.state.disease != null) {
+            fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
+                method: "POST",
+                mode: "no-cors",
+                cache: "no-cache",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                redirect: "follow",
+                referrer: "no-referrer",
+                body: JSON.stringify(this.state.disease),
+            });
+            console.log('sent ' + this.state.disease);
+        }
     }
 
     render() {
