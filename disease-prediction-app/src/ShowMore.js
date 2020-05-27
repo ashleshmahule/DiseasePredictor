@@ -11,8 +11,8 @@ class ShowMore extends React.Component {
         this.GetDataFromForm=this.GetDataFromForm.bind(this);
     }
 
-    GetDataFromForm() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+    async GetDataFromForm() {
+        await fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
         .then(response => response.json())
         .then(data => {
             console.log(data.data);
