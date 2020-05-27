@@ -164,7 +164,7 @@ class FormClass extends React.Component {
         this._onButtonClick = this._onButtonClick.bind(this);
         this.disease = '';
         this._isMounted = false;
-
+        this.FetchData = this.FetchData.bind(this);
     }
 
 
@@ -196,7 +196,7 @@ class FormClass extends React.Component {
         );
     }
 
-    componentDidUpdate() {
+    FetchData() {
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
             .then(response => response)
             .then(data => {
@@ -206,7 +206,7 @@ class FormClass extends React.Component {
     }
 
     _redirectToShowMore() {
-
+        this.FetchData();
         // this.context.router.push({
         //     pathname: '/ShowMore',
         //     state: { yourCalculatedData: this.disease }
