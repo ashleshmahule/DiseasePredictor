@@ -36,7 +36,7 @@ class GetDisease extends Component {
     componentDidUpdate() {
         try {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/ShowMore');
+            xhr.open('POST', 'https://diseasepredictorapp.herokuapp.com/GetMore');
             xhr.send(JSON.stringify({ result: this.state.disease }));
             console.log('sent '+this.state.disease);
         }

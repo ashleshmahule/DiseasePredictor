@@ -197,7 +197,7 @@ class FormClass extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://diseasepredictorapp.herokuapp.com/ShowMore')
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
