@@ -200,7 +200,7 @@ class FormClass extends React.Component {
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
             method: 'POST'
         })
-            .then(response => response.json())
+            .then(response => response)
             .then(data => {
                 console.log(data);
                 this.disease = data;
