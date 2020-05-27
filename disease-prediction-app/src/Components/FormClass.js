@@ -198,7 +198,7 @@ class FormClass extends React.Component {
 
     componentDidUpdate() {
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-            .then(response => response)
+            .then(response => response.json)
             .then(data => {
                 console.log(data);
                 this.disease = data;
