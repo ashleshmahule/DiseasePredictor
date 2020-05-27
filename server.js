@@ -32,7 +32,7 @@ app.listen(PORT, err => {
 });
 
 app.get('/GetMore', function (req, res) {
-  console.log(req);
+  console.log(req.query);
 
   console.log('posting');
   res.json(req.query);
