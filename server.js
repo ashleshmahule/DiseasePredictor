@@ -33,5 +33,5 @@ app.listen(PORT, err => {
 
 app.post('/GetMore', function (req, res) {
   console.log('posting');
-  res.send();
+  res.json();
 });
