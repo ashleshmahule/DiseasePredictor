@@ -31,7 +31,7 @@ app.listen(PORT, err => {
   console.log("SERVER STARTED "+PORT);
 });
 
-app.post('/GetMore', function (req, res) {
+app.get('/GetMore', function (req, res) {
   console.log(req);
   console.log('posting');
   res.send();

@@ -40,7 +40,7 @@ class GetDisease extends Component {
     componentDidUpdate() {
         if (this.state.disease != null) {
             fetch('https://diseasepredictorapp.herokuapp.com/GetMore', {
-                method: "POST",
+                method: "GET",
                 mode: "no-cors",
                 cache: "no-cache",
                 credentials: "same-origin",
