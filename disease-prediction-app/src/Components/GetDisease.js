@@ -18,7 +18,7 @@ class GetDisease extends Component {
     }
 
     async GetFromFlask() {
-        let dname = localStorage.getItem("diseaseName");
+        let dname = localStorage.getItem("dname");
 
         if (dname) {
             dname = JSON.parse(dname);
