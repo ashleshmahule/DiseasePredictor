@@ -46,7 +46,7 @@ class GetDisease extends Component {
         console.log({ disease });
         // this.SendData();
 
-        if(localStorage.getItem('diseaseName')==null && this.state.disease!=null) {
+        if(localStorage.getItem('diseaseName')==null && this.state.disease[0]!=null && this.state.disease[0]!=localStorage.getItem('diseasename')) {
             localStorage.setItem('diseaseName',this.state.disease);
             console.log('set');
         }
