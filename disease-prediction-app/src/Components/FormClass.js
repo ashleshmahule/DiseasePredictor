@@ -165,7 +165,6 @@ class FormClass extends React.Component {
         this._onButtonClick = this._onButtonClick.bind(this);
         this.disease = '';
         this._isMounted = false;
-        this.sendData = this.sendData.bind(this);
     }
 
 
@@ -176,11 +175,7 @@ class FormClass extends React.Component {
     }
 
 
-    _onButtonClick() {
-        this.setState({
-            showComponent: true
-        });
-    }
+
 
 
     Predict() {
@@ -206,7 +201,11 @@ class FormClass extends React.Component {
             });
     }
 
-    sendData() {
+    _onButtonClick() {
+        this.setState({
+            showComponent: true
+        });
+
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
             .then(response => response.json())
             .then(data => {
@@ -219,7 +218,7 @@ class FormClass extends React.Component {
 
         this.context.router.push({
             pathname: '/confirmation',
-            state: {disease: this.disease}  
+            state: { disease: this.disease }
         })
     }
 
@@ -245,7 +244,7 @@ class FormClass extends React.Component {
                                 multiple
                                 options={this.symptoms}
                                 placeholder="Start Typing"
-                                onChange={this.handleChange, this.sendData}
+                                onChange={this.handleChange}
                             />
                         </Col>
                     </Row>
