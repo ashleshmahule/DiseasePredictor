@@ -11,17 +11,17 @@ class ShowMore extends React.Component {
         this.GetDataFromForm=this.GetDataFromForm.bind(this);
     }
 
-    async GetDataFromForm() {
-        await fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.data);
-            this.disease = data.data;
-        });
-    }
+    // async GetDataFromForm() {
+    //     await fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data.data);
+    //         this.disease = data.data;
+    //     });
+    // }
 
     render() {
-        this.GetDataFromForm();
+        // this.GetDataFromForm();
         return (
             <>
                 <NavbarHead />
