@@ -23,7 +23,12 @@ app.get("*", (req, res) => {
 });
 
 
+app.get('/GetMore', function (req, res) {
+  // console.log(req.query);
 
+  // console.log('posting');
+  res.send({data: 'req.query'});
+});
 
 
 app.listen(PORT, err => {
@@ -31,9 +36,3 @@ app.listen(PORT, err => {
   console.log("SERVER STARTED "+PORT);
 });
 
-app.get('/GetMore', function (req, res) {
-  // console.log(req.query);
-
-  // console.log('posting');
-  res.send({data: 'req.query'});
-});

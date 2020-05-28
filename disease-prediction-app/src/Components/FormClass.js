@@ -177,7 +177,7 @@ class FormClass extends React.Component {
 
     _onButtonClick() {
         this.setState({
-            showComponent: true,
+            showComponent: true
         });
     }
 
