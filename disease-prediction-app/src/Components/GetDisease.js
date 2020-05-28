@@ -39,18 +39,17 @@ class GetDisease extends Component {
 
     componentDidMount() {
         this.GetFromFlask();
-        console.log('waiting');
-        while(this.state.disease==null) {
-
-        }
-        localStorage.setItem('diseaseName',this.state.disease);
-        console.log('sent ' + this.state.disease);
     }
 
     render() {
         var { disease } = this.state;
         console.log({ disease });
         // this.SendData();
+
+        if(localStorage.getItem('diseaseName')==null && this.state.disease!=null) {
+            localStorage.setItem('diseaseName',this.state.disease);
+            console.log('set');
+        }
 
         return (
             <>
