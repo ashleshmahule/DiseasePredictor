@@ -36,10 +36,11 @@ class GetDisease extends Component {
 
     componentDidMount() {
         this.GetFromFlask();
-        if (this.state.disease != null) {
-            fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query='+this.state.disease);
-            console.log('sent ' + this.state.disease);
+        for (var i = 0; i < 2; i++) {
+            console.log('waiting');
         }
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query=' + this.state.disease);
+        console.log('sent ' + this.state.disease);
     }
 
     render() {
