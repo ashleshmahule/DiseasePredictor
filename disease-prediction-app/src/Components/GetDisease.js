@@ -4,6 +4,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import './GetDisease.css';
 
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 
 class GetDisease extends Component {
     constructor(props) {
@@ -34,11 +37,10 @@ class GetDisease extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.GetFromFlask();
-        for (var i = 0; i < 2; i++) {
-            console.log('waiting');
-        }
+        console.log('waiting');
+        await sleep(3000);
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query=' + this.state.disease);
         console.log('sent ' + this.state.disease);
     }
