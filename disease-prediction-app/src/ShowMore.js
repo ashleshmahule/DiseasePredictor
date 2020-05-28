@@ -20,8 +20,11 @@ class ShowMore extends React.Component {
         });
     }
 
-    render() {
+    componentDidMount() {
         this.GetDataFromForm();
+    }
+
+    render() {
         return (
             <>
                 <NavbarHead />
