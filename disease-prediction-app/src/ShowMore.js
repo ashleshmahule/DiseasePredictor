@@ -24,7 +24,7 @@ class ShowMore extends React.Component {
         return (
             <>
                 <NavbarHead />
-                <h2>{this.disease[0]}</h2>
+                <h2>{this.disease}</h2>
             </>
         );
     }
