@@ -7,17 +7,12 @@ class ShowMore extends React.Component {
 
     constructor(props) {
         super(props);
-        this.disease='';
-        this.GetDataFromForm=this.GetDataFromForm.bind(this);
+        this.disease = '';
+        this.GetDataFromForm = this.GetDataFromForm.bind(this);
     }
 
     GetDataFromForm() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.data);
-            this.disease = data.data;
-        });
+        this.disease = localStorage.getItem('diseaseName');
     }
 
     componentDidMount() {
@@ -28,7 +23,7 @@ class ShowMore extends React.Component {
         return (
             <>
                 <NavbarHead />
-                
+                <h2>{this.disease}</h2>
             </>
         );
     }
