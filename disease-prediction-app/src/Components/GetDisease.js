@@ -58,12 +58,6 @@ class GetDisease extends Component {
             console.log('sent ' + this.state.disease);
         }
 
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
-
         return (
             <>
                 <Container>

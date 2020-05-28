@@ -12,6 +12,7 @@ import './FormClass.css';
 import Button from 'react-bootstrap/Button';
 import GetDisease from './GetDisease';
 import { Link } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 
 
 class FormClass extends React.Component {
@@ -164,7 +165,7 @@ class FormClass extends React.Component {
         this._onButtonClick = this._onButtonClick.bind(this);
         this.disease = '';
         this._isMounted = false;
-
+        this.sendData = this.sendData.bind(this);
     }
 
 
@@ -198,28 +199,31 @@ class FormClass extends React.Component {
 
     componentDidUpdate() {
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            this.disease = data.data;
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.disease = data.data;
+            });
+    }
+
+    sendData() {
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.disease = data.data;
+            });
     }
 
     _redirectToShowMore() {
 
-        // this.context.router.push({
-        //     pathname: '/ShowMore'
-        // });
+        this.context.router.push({
+            pathname: '/confirmation',
+            state: {disease: this.disease}  
+        })
     }
 
     render() {
-
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json)
-        .then(data => {
-            console.log(data);
-            this.disease = data.data;
-        });
 
         const SymptomsInput = (props) => (
             <>
@@ -241,7 +245,7 @@ class FormClass extends React.Component {
                                 multiple
                                 options={this.symptoms}
                                 placeholder="Start Typing"
-                                onChange={this.handleChange}
+                                onChange={this.handleChange, this.sendData}
                             />
                         </Col>
                     </Row>
@@ -255,7 +259,7 @@ class FormClass extends React.Component {
                         <this.Predict />
                         <Row>
                             <Col>
-                                <Button as={Link} to="/ShowMore" onClick={this._redirectToShowMore} variant="dark">Know More!</Button>
+                                <Button as={Link} to="/ShowMore" variant="dark">Know More!</Button>
                             </Col>
                         </Row>
                     </>
