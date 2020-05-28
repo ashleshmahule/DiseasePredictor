@@ -24,7 +24,7 @@ class ShowMore extends React.Component {
         return (
             <>
                 <NavbarHead />
-                <h2>{this.disease}</h2>
+                <h2>The {localStorage.getItem("diseaseName")}</h2>
             </>
         );
     }
