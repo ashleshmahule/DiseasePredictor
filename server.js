@@ -21,9 +21,9 @@ app.use(express.static(path.resolve(__dirname, "disease-prediction-app/build")))
 
 
 app.get('/GetMore', function (req, res) {
-  // console.log(req.query);
+  console.log('posting');
+  console.log(req.query);
 
-  // console.log('posting');
   res.send({data: req.query});
 });
 
