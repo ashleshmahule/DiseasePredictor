@@ -18,7 +18,7 @@ class GetDisease extends Component {
     }
 
     async GetFromFlask() {
-        let dname = localStorage.getItem("dname");
+        let dname = localStorage.getItem("diseaseName");
         console.log(this.symptoms);
 
         if (dname) {
