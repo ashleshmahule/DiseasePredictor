@@ -13,6 +13,7 @@ class ShowMore extends React.Component {
 
     GetDataFromForm() {
         this.disease = localStorage.getItem("diseaseName");
+        console.log(this.disease);
     }
 
     componentDidMount() {
