@@ -21,20 +21,16 @@ class GetDisease extends Component {
     }
 
     async GetFromFlask() {
-        let dname = localStorage.getItem("diseaseName");
         console.log(this.symptoms);
 
-        if (dname) {
-            //dname = JSON.parse(dname);
-            this.setState({ dname });
-        } else {
-            fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + this.symptoms)
-                .then(response => response.json())
-                .then(data => {
-                    this.setState({ disease: data.disease });
-                    localStorage.setItem("dname", JSON.stringify(dname));
-                });
-        }
+        fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + this.symptoms)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ disease: data.disease });
+                localStorage.setItem("diseaseName", data.disease);
+                localStorage.setItem("drug",data.drug);
+                console.log('set');
+            });
     }
 
     componentDidMount() {
@@ -46,10 +42,10 @@ class GetDisease extends Component {
         console.log({ disease });
         // this.SendData();
 
-        if(localStorage.getItem('diseaseName')==null && this.state.disease[0]!=null && this.state.disease[0]!=localStorage.getItem('diseasename')) {
-            localStorage.setItem('diseaseName',this.state.disease);
-            console.log('set');
-        }
+        // if (localStorage.getItem('diseaseName') == null && this.state.disease[0] != null && this.state.disease[0] != localStorage.getItem('diseasename')) {
+        //     localStorage.setItem('diseaseName', this.state.disease);
+        //     console.log('set');
+        // }
 
         return (
             <>
