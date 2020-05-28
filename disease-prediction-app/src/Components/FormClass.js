@@ -165,7 +165,6 @@ class FormClass extends React.Component {
         this._onButtonClick = this._onButtonClick.bind(this);
         this.disease = '';
         this._isMounted = false;
-        this._redirectToShowMore = this._redirectToShowMore.bind(this);
     }
 
 
@@ -195,31 +194,6 @@ class FormClass extends React.Component {
                 {this._isMounted ? <GetDisease symp={this.toSend} /> : null}
             </>
         );
-    }
-
-    componentDidUpdate() {
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                this.disease = data.data;
-            });
-    }
-
-
-    _redirectToShowMore() {
-
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                this.disease = data.data;
-            });
-
-        this.context.router.push({
-            pathname: '/confirmation',
-            state: { disease: this.disease }
-        })
     }
 
     render() {
@@ -258,7 +232,7 @@ class FormClass extends React.Component {
                         <this.Predict />
                         <Row>
                             <Col>
-                                <Button as={Link} onClick={this._redirectToShowMore} to="/ShowMore" variant="dark">Know More!</Button>
+                                <Button as={Link} to="/ShowMore" variant="dark">Know More!</Button>
                             </Col>
                         </Row>
                     </>
