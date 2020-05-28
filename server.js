@@ -24,7 +24,7 @@ app.get('/GetMore', function (req, res) {
   // console.log(req.query);
 
   // console.log('posting');
-  res.send({data: 'req.query'});
+  res.send({data: req.query});
 });
 
 

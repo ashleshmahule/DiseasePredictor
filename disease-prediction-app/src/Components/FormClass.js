@@ -210,12 +210,6 @@ class FormClass extends React.Component {
         // this.context.router.push({
         //     pathname: '/ShowMore'
         // });
-        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
-        .then(response => response.json)
-        .then(data => {
-            console.log(data);
-            this.disease = data.data;
-        });
     }
 
     render() {
