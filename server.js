@@ -32,8 +32,8 @@ app.listen(PORT, err => {
 });
 
 app.get('/GetMore', function (req, res) {
-  console.log(req.query);
+  // console.log(req.query);
 
-  console.log('posting');
-  res.send({data: req.query});
+  // console.log('posting');
+  res.send({data: 'req.query'});
 });
