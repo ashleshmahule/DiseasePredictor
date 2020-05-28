@@ -34,10 +34,11 @@ class GetDisease extends Component {
     }
 
     componentDidMount() {
-        this.GetFromFlask();
+        
     }
 
     render() {
+        this.GetFromFlask();
         var { disease } = this.state;
         console.log({ disease });
         // this.SendData();
