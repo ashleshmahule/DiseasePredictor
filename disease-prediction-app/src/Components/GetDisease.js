@@ -42,13 +42,6 @@ class GetDisease extends Component {
         }
     }
 
-    componentDidUpdate() {
-        if (this.state.disease != null) {
-            fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query='+this.state.disease);
-            console.log('sent ' + this.state.disease);
-        }
-    }
-
     render() {
         var { disease } = this.state;
         console.log({ disease });
