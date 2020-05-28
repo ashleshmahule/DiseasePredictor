@@ -37,10 +37,10 @@ class GetDisease extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.GetFromFlask();
         console.log('waiting');
-        sleep(5000);
+        await sleep(5000);
         fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query=' + this.state.disease);
         console.log('sent ' + this.state.disease);
     }
