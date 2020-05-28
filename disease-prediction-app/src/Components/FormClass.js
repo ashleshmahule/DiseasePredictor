@@ -220,6 +220,13 @@ class FormClass extends React.Component {
 
     render() {
 
+        fetch('https://diseasepredictorapp.herokuapp.com/GetMore')
+        .then(response => response.json)
+        .then(data => {
+            console.log(data);
+            this.disease = data.data;
+        });
+
         const SymptomsInput = (props) => (
             <>
                 <Container id='cont'>

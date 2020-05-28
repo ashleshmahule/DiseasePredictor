@@ -8,7 +8,7 @@ class ShowMore extends React.Component {
     constructor(props) {
         super(props);
         this.disease='';
-        this.GetDataFromForm=this.GetDataFromForm.bind(this);
+        // this.GetDataFromForm=this.GetDataFromForm.bind(this);
     }
 
     // async GetDataFromForm() {
