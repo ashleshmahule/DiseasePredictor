@@ -18,9 +18,6 @@ app.use(function(req, res, next) {
 
 app.use(compression());
 app.use(express.static(path.resolve(__dirname, "disease-prediction-app/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "disease-prediction-app/build", "index.html"));
-});
 
 
 app.get('/GetMore', function (req, res) {
@@ -29,6 +26,12 @@ app.get('/GetMore', function (req, res) {
   // console.log('posting');
   res.send({data: 'req.query'});
 });
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "disease-prediction-app/build", "index.html"));
+});
+
 
 
 app.listen(PORT, err => {
