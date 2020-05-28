@@ -25,7 +25,7 @@ class GetDisease extends Component {
         console.log(this.symptoms);
 
         if (dname) {
-            dname = JSON.parse(dname);
+            //dname = JSON.parse(dname);
             this.setState({ dname });
         } else {
             fetch('https://diseasepredtictor.herokuapp.com/getDisease?query=' + this.symptoms)
