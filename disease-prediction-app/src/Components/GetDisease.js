@@ -53,6 +53,11 @@ class GetDisease extends Component {
         console.log({ disease });
         // this.SendData();
 
+        if (this.state.disease != null) {
+            fetch('https://diseasepredictorapp.herokuapp.com/GetMore?query='+this.state.disease);
+            console.log('sent ' + this.state.disease);
+        }
+
         return (
             <>
                 <Container>
