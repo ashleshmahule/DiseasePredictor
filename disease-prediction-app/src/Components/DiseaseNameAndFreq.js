@@ -5,7 +5,7 @@ import './DiseaseNameAndFreq.css';
 function DiseaseNameAndFreq(props) {
     var diseaseName='';
     diseaseName=props.diseaseName;
-
+    console.log(props.diseaseName);
     console.log(diseaseName);
 
 
