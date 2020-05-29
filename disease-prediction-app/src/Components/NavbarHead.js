@@ -7,7 +7,7 @@ import './NavbarHead.css'
 
 function NavbarHead() {
   return (
-    <Navbar fixed="top" collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar className="navClass" sticky="top" collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Link to="/">
         <Navbar.Brand className="brand">Disease Predictor</Navbar.Brand>
       </Link>

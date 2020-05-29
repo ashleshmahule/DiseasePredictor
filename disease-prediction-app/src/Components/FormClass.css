@@ -35,4 +35,8 @@
 
 #SymptomsInput::placeholder {
     font-size: 100%;
-  }
+}
+
+#warn {
+    color: #e0f2f1;
+}

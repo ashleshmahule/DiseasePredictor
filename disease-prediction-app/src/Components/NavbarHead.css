@@ -1,18 +1,11 @@
-a {
-    text-decoration: none !important;
-    text-emphasis: none;
-    text-align: center;
-    color: rgba(209, 209, 209, 0.781);
-}
-
-a:hover {
-    color: rgb(209, 209, 209);
-}
-
 .brand {
     font-size: 75%;
 }
 
 .lnk {
     font-size: 75%;
+}
+
+.navClass {
+    background-color: rgb(41, 41, 41) !important;
 }
