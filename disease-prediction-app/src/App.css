@@ -2,6 +2,7 @@
   text-align: center;
   min-height: 100vh;
   background-image: url("../src/HomeBg.jpg");
+  background-attachment: fixed;
   color: rgb(31, 31, 31);
   font-size: 150%;
   background-repeat: no-repeat;

@@ -10,7 +10,7 @@ function DiseaseNameAndFreq(props) {
 
 
     return (
-    <h2>{diseaseName}</h2>
+    <h2>This {diseaseName}</h2>
     );
 }
 

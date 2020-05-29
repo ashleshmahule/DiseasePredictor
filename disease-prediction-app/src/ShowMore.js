@@ -29,15 +29,16 @@ class ShowMore extends React.Component {
         return (
             <>
                 <NavbarHead />
+                <Container>
+                    <Row className="justify-content-md-center">
+                        <Col md="5" sm="5" lg="5">
+                            <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
+                        </Col>
 
-                <Row className="justify-content-md-center">
-                    <Col md="5" sm="5" lg="5">
-                    <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
-                    </Col>
-
-                    <Col md="7" sm="7" lg="7">
-                    </Col>
-                </Row>
+                        <Col md="7" sm="7" lg="7">
+                        </Col>
+                    </Row>
+                </Container>
             </>
         );
     }
