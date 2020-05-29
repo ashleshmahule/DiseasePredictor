@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url("../src/HomeBg.png");
-  color: #FFFFFF;
+  background-image: url("../src/HomeBg.jpg");
+  color: rgb(31, 31, 31);
   font-size: 150%;
   background-repeat: no-repeat;
   background-size: cover;
