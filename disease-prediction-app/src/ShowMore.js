@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarHead from './Components/NavbarHead';
 import './ShowMore.css'
-
+import DiseaseNameAndFreq from './Components/DiseaseNameAndFreq';
 
 class ShowMore extends React.Component {
 
@@ -24,7 +24,7 @@ class ShowMore extends React.Component {
         return (
             <>
                 <NavbarHead />
-                <h2>The {localStorage.getItem("diseaseName")}</h2>
+                <DiseaseNameAndFreq  />
             </>
         );
     }
