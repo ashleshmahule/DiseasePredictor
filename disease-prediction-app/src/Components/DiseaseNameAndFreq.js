@@ -12,10 +12,13 @@ function DiseaseNameAndFreq(props) {
     console.log(diseaseName);
 
     fetch('https://diseasepredictorapp.herokuapp.com/getDiseaseInfo?query=' + diseaseName)
-        .then(response => response.json)
+        .then(response => {
+            console.log(response);
+            response.json();
+        })
         .then(data => {
-            updateDiseaseinfo(data.description);
-            console.log(data.description);
+            updateDiseaseinfo(data);
+            console.log(data);
         });
 
 

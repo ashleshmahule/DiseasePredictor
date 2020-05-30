@@ -10,6 +10,8 @@ var cors = require('cors');
 const mongoClient = require('mongodb').MongoClient;
 const router = require('express').Router();
 
+var description, freq;
+
 router.post('/getDiseaseInfo', (req, res) => {
     mongoClient.connect('mongodb+srv://ashlesh:admin@diseaseprediction-mltmf.mongodb.net/test', function (err, db) {
         if (err) {
@@ -24,7 +26,7 @@ router.post('/getDiseaseInfo', (req, res) => {
 
             console.log(result.description);
 
-            res.json(result.description);
+            res.send({description: result.description, freq: result.frequency});
             db.close();
         });
 
