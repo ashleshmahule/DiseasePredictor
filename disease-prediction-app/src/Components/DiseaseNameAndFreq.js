@@ -8,6 +8,9 @@ function DiseaseNameAndFreq(props) {
     console.log(props.diseaseName);
     console.log(diseaseName);
 
+    
+    
+
 
     return (
     <h2>This {diseaseName}</h2>

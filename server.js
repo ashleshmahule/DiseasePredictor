@@ -7,6 +7,8 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
 const app = express();
 var cors = require('cors');
+var mongoDataRouter=require('./routes/getDataFromMongo');
+
 cors({credentials: true, origin: true})
 app.use(cors());
 
@@ -27,6 +29,7 @@ app.get('/GetMore', function (req, res) {
   res.send({data: req.query});
 });
 
+app.use('/', mongoDataRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "disease-prediction-app/build", "index.html"));
