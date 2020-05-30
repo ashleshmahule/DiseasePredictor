@@ -7,21 +7,20 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
 const app = express();
 var cors = require('cors');
-const mongoose = require('mongoose');
+const mongoClient = require('mongodb').MongoClient;
 
-mongoose.connect('mongodb+srv://ashlesh:admin@diseaseprediction-mltmf.mongodb.net/test', { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
-
-var database=mongoose.connection;
-
-var disease=mongoose.model('DiseasePrediction','DiseaseInfo');
-
-disease.find('AIDS', '_id', function(err, info) {
+mongoClient.connect('mongodb+srv://ashlesh:admin@diseaseprediction-mltmf.mongodb.net/test', function(err, db) {
     if(err) {
-        return 'error occured';
+        throw err;
     }
-    console.log(info);
+
+    var dbObject=db.db('DiseaseInfo');
+    dbObject.collection('DiseasePrediction').findOne({'_id': 'AIDS'}, function(err, result) {
+        if(err) throw err;
+
+        console.log(result.description);
+        db.close();
+    });
+
 });
 
