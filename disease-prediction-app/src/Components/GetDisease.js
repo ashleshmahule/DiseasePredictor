@@ -25,13 +25,13 @@ class GetDisease extends Component {
             .then(data => {
                 this.setState({ disease: data.disease });
                 localStorage.setItem("diseaseName", data.disease);
-                localStorage.setItem("drug",data.drug);
+                localStorage.setItem("drug", data.drug);
                 console.log('set');
             });
     }
 
     componentDidMount() {
-        
+
     }
 
     render() {

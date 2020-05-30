@@ -1,6 +1,7 @@
 import React from 'react';
 import './DiseaseNameAndFreq.css';
 import { useState } from 'react';
+import Card from 'react-bootstrap/Card'
 
 
 function DiseaseNameAndFreq(props) {
@@ -17,16 +18,32 @@ function DiseaseNameAndFreq(props) {
         })
         .then(response => response.json())
         .then(data => {
-            updateDiseaseinfo(data.description);
-            console.log(data.description);
+            updateDiseaseinfo(data.freq);
+            console.log(data.freq);
         });
 
+    const torender = <>
+        <Card
+            bg='info'
+            style={{ width: '50%' }}
+            text='dark'
+            className="name-card"
+        >
+            <Card.Header  style={{textAlign:'center'}}>{diseaseName}</Card.Header>
+            <Card.Body>
+                <Card.Text>
+                    {diseaseInfo}
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    </>;
 
+    const error=<>
+    </>;
 
     return (
         <>
-            <h2>{diseaseName}</h2>
-            <p>{diseaseInfo}</p>
+            {diseaseName===null || '' ? error:torender}
         </>
     );
 }

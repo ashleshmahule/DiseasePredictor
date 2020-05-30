@@ -1,4 +1,9 @@
-.align-row-center {
-    display: flex;
-    align-items: center;
+.infohead {
+    font-size: 150%;
+    margin-top: 2% !important;
+    color: #000000 !important;
+}
+
+.alignMe {
+   margin-top: 3%;
 }

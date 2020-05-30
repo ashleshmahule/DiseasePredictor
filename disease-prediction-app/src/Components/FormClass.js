@@ -202,7 +202,7 @@ class FormClass extends React.Component {
             <>
                 <Container id='cont'>
                     <Row noGutters id="symp-1" className="justify-content-md-center">
-                        <Col sm="9" md="9" lg="9">
+                        <Col sm="12" md="12" lg="12">
                             <Form.Label>
                                 Choose The Symptoms You Have Been Experiencing Lately
                         </Form.Label>
