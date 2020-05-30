@@ -4,9 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import './GetDisease.css';
 
-const sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
 
 class GetDisease extends Component {
     constructor(props) {

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './DiseaseNameAndFreq.css';
-import { response } from 'express';
+import { useState } from 'react';
 
 
 function DiseaseNameAndFreq(props) {
@@ -12,7 +12,7 @@ function DiseaseNameAndFreq(props) {
     console.log(diseaseName);
 
     fetch('https://diseasepredictorapp.herokuapp.com/getDiseaseInfo?query=' + diseaseName)
-        .then(response => response.json())
+        .then(response => response.json)
         .then(data => {
             updateDiseaseinfo(data.description);
             console.log(data.description);

@@ -1,3 +1,4 @@
+const { createServer } = require("http");
 const express = require("express");
 const compression = require("compression");
 const morgan = require("morgan");
@@ -6,7 +7,7 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
 const app = express();
 var cors = require('cors');
-var mongoDataRouter=require('./routes/getDataFromMongo');
+const mongoDataRouter=require('./routes/getDataFromMongo');
 
 cors({credentials: true, origin: true})
 app.use(cors());
