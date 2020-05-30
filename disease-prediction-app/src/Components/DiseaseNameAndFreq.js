@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DiseaseNameAndFreq.css';
+import { response } from 'express';
 
 
 function DiseaseNameAndFreq(props) {
-    var diseaseName='';
-    diseaseName=props.diseaseName;
+    var diseaseName = '';
+    var [diseaseInfo, updateDiseaseinfo] = useState('');
+
+    diseaseName = props.diseaseName;
     console.log(props.diseaseName);
     console.log(diseaseName);
 
-    
-    
+    fetch('https://diseasepredictorapp.herokuapp.com/getDiseaseInfo?query=' + diseaseName)
+        .then(response => response.json())
+        .then(data => {
+            updateDiseaseinfo(data.description);
+            console.log(data.description);
+        });
+
 
 
     return (
-    <h2>This {diseaseName}</h2>
+        <>
+            <h2>{diseaseName}</h2>
+            <p>{diseaseInfo}</p>
+        </>
     );
 }
 
