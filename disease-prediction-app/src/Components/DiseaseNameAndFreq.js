@@ -11,14 +11,14 @@ function DiseaseNameAndFreq(props) {
     console.log(props.diseaseName);
     console.log(diseaseName);
 
-    fetch('https://diseasepredictorapp.herokuapp.com/getDiseaseInfo?query=' + diseaseName)
-        .then(response => {
-            console.log(response);
-            response.json();
+    fetch('https://diseasepredictorapp.herokuapp.com/getDiseaseInfo?query=' + diseaseName,
+        {
+            method: 'POST'
         })
+        .then(response => response.json())
         .then(data => {
-            updateDiseaseinfo(data);
-            console.log(data);
+            updateDiseaseinfo(data.description);
+            console.log(data.description);
         });
 
 
