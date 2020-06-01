@@ -64,7 +64,7 @@ class GetDisease extends Component {
 
                     <Row>
                         <Col>
-                            <Button as={Link} to="/ShowMore" variant="dark">Know More!</Button>
+                            <Button className="show-more-btn" as={Link} to="/ShowMore" variant="dark">Know More!</Button>
                         </Col>
                     </Row>
                 </Container>
