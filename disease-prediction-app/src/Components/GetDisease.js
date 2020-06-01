@@ -3,6 +3,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import './GetDisease.css';
+import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 
 class GetDisease extends Component {
@@ -30,9 +33,6 @@ class GetDisease extends Component {
             });
     }
 
-    componentDidMount() {
-
-    }
 
     render() {
         this.GetFromFlask();
@@ -45,12 +45,26 @@ class GetDisease extends Component {
         //     console.log('set');
         // }
 
+        const loader = <>
+            <Spinner animation="grow" variant="danger" />
+        </>;
+
+        var pred = <>
+            Predicted Disease: {this.state.disease}
+        </>;
+
         return (
             <>
                 <Container>
                     <Row className="justify-content-md-center predicted">
                         <Col sm="6" md="6" lg="6">
-                            Predicted Disease: {this.state.disease}
+                            {this.state.disease === null || this.state.disease === '' ? loader : pred}
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <Button as={Link} to="/ShowMore" variant="dark">Know More!</Button>
                         </Col>
                     </Row>
                 </Container>

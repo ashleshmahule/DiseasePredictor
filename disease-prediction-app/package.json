@@ -19,6 +19,7 @@
     "react-fade-in": "^1.0.0",
     "react-loading": "^2.0.3",
     "react-lottie": "^1.2.3",
+    "react-promise-tracker": "^2.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",

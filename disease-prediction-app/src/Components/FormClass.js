@@ -230,11 +230,6 @@ class FormClass extends React.Component {
                     <Button onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
                     {this.state.showComponent ? <>
                         <this.Predict />
-                        <Row>
-                            <Col>
-                                <Button as={Link} to="/ShowMore" variant="dark">Know More!</Button>
-                            </Col>
-                        </Row>
                     </>
                         : null}
                 </Container>

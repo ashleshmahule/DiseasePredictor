@@ -21,7 +21,7 @@ function DiseaseDescription(props) {
 
     const torender = <>
         <Card border="info" className="desc-card">
-            <Card.Header  style={{textAlign:'center'}}>Description</Card.Header>
+            <Card.Header style={{ textAlign: 'center' }}>Description</Card.Header>
             <Card.Body>
                 <Card.Text className="card-text">
                     {desc}
@@ -36,7 +36,7 @@ function DiseaseDescription(props) {
 
     return (
         <>
-            {diseaseName === null || '' ? error : torender}
+            {diseaseName === null || diseaseName === '' ? error : torender}
         </>
     );
 }

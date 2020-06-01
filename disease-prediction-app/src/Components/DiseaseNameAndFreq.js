@@ -32,7 +32,7 @@ function DiseaseNameAndFreq(props) {
             className="name-card"
         >
             <Card.Img variant="top" src={diseaseImg} />
-            <Card.Header  style={{textAlign:'center'}}>{diseaseName}</Card.Header>
+            <Card.Header style={{ textAlign: 'center' }}>{diseaseName}</Card.Header>
             <Card.Body>
                 <Card.Text>
                     {diseaseInfo}
@@ -41,12 +41,12 @@ function DiseaseNameAndFreq(props) {
         </Card>
     </>;
 
-    const error=<>
+    const error = <>
     </>;
 
     return (
         <>
-            {diseaseName===null || '' ? error:torender}
+            {diseaseName === null || diseaseName === '' ? error : torender}
         </>
     );
 }
