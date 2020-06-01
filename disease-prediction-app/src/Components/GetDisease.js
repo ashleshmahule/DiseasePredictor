@@ -57,7 +57,7 @@ class GetDisease extends Component {
             <>
                 <Container>
                     <Row className="justify-content-md-center predicted">
-                        <Col sm="6" md="6" lg="6">
+                        <Col sm="10" md="10" lg="10">
                             {this.state.disease === null || this.state.disease === '' ? loader : pred}
                         </Col>
                     </Row>

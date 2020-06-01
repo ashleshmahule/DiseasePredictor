@@ -1,7 +1,9 @@
 import React from 'react';
 import './DiseaseNameAndFreq.css';
 import { useState } from 'react';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 function DiseaseNameAndFreq(props) {
@@ -24,6 +26,10 @@ function DiseaseNameAndFreq(props) {
             console.log(data.freq);
         });
 
+    const loader = <>
+        <Spinner animation="success" variant="danger" />
+    </>;
+
     const torender = <>
         <Card
             bg='info'
@@ -35,7 +41,7 @@ function DiseaseNameAndFreq(props) {
             <Card.Header style={{ textAlign: 'center' }}>{diseaseName}</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    {diseaseInfo}
+                    {diseaseInfo === null || diseaseInfo === '' ? loader : diseaseInfo}
                 </Card.Text>
             </Card.Body>
         </Card>
@@ -43,6 +49,8 @@ function DiseaseNameAndFreq(props) {
 
     const error = <>
     </>;
+
+
 
     return (
         <>

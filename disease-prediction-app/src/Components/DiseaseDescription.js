@@ -1,7 +1,9 @@
 import React from 'react';
 import './DiseaseDescription.css';
 import { useState } from 'react';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 function DiseaseDescription(props) {
 
@@ -19,12 +21,16 @@ function DiseaseDescription(props) {
         });
 
 
+    const loader = <>
+        <Spinner animation="success" variant="danger" />
+    </>;
+
     const torender = <>
         <Card border="info" className="desc-card">
             <Card.Header style={{ textAlign: 'center' }}>Description</Card.Header>
             <Card.Body>
                 <Card.Text className="card-text">
-                    {desc}
+                    {desc===null || desc==='' ? loader: desc}
                 </Card.Text>
             </Card.Body>
         </Card>
