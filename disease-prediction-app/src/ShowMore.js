@@ -43,11 +43,11 @@ class ShowMore extends React.Component {
 
                 <Container className="alignMe">
                     <Row noGutters className="align-items-center" style={{ textAlign: 'left' }}>
-                        <Col md="6" sm="6" lg="5">
+                        <Col md="5" sm="6" lg="5">
                             <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
                         </Col>
 
-                        <Col md="6" sm="6" lg="7">
+                        <Col md="7" sm="6" lg="7">
                             <DiseaseDescription diseaseName={localStorage.getItem("diseaseName")} />
                         </Col>
                     </Row>
