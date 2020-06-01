@@ -41,18 +41,17 @@ class ShowMore extends React.Component {
                 <NavbarHead />
                 {localStorage.getItem("diseaseName") === null || '' ? error : head}
 
+                <Container className="alignMe">
+                    <Row noGutters className="align-items-center" style={{ textAlign: 'left' }}>
+                        <Col md="5" sm="5" lg="5">
+                            <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
+                        </Col>
 
-                    <Container className="alignMe">
-                        <Row noGutters className="align-items-center" style={{ textAlign: 'left' }}>
-                            <Col md="5" sm="5" lg="5">
-                                <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
-                            </Col>
-
-                            <Col md="7" sm="7" lg="7">
-                                <DiseaseDescription diseaseName={localStorage.getItem("diseaseName")} />
-                            </Col>
-                        </Row>
-                    </Container>
+                        <Col md="7" sm="7" lg="7">
+                            <DiseaseDescription diseaseName={localStorage.getItem("diseaseName")} />
+                        </Col>
+                    </Row>
+                </Container>
 
             </>
         );

@@ -26,7 +26,7 @@ router.post('/getDiseaseInfo', (req, res) => {
 
             console.log(result.description);
 
-            res.send({ description: result.description, freq: result.frequency });
+            res.send({ description: result.description, freq: result.frequency, imgUrl: result.imgUrl });
             db.close();
         });
 

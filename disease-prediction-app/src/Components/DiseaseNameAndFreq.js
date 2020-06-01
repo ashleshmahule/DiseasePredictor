@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 function DiseaseNameAndFreq(props) {
     var diseaseName = '';
     var [diseaseInfo, updateDiseaseinfo] = useState('');
+    var [diseaseImg, updateDiseaseImg] = useState('');
 
     diseaseName = props.diseaseName;
     console.log(props.diseaseName);
@@ -19,6 +20,7 @@ function DiseaseNameAndFreq(props) {
         .then(response => response.json())
         .then(data => {
             updateDiseaseinfo(data.freq);
+            updateDiseaseImg(data.imgUrl);
             console.log(data.freq);
         });
 
@@ -29,6 +31,7 @@ function DiseaseNameAndFreq(props) {
             text='dark'
             className="name-card"
         >
+            <Card.Img variant="top" src={diseaseImg} />
             <Card.Header  style={{textAlign:'center'}}>{diseaseName}</Card.Header>
             <Card.Body>
                 <Card.Text>
