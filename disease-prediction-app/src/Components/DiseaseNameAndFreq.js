@@ -33,12 +33,12 @@ function DiseaseNameAndFreq(props) {
     const torender = <>
         <Card
             bg='info'
-            style={{ width: '50%' }}
             text='dark'
             className="name-card"
         >
             <Card.Img variant="top" src={diseaseImg} />
-            <Card.Header style={{ textAlign: 'center' }}>{diseaseName}</Card.Header>
+            <Card.Header style={{ textAlign: 'center' }}>{diseaseName} (Image)</Card.Header>
+
             <Card.Body>
                 <Card.Text>
                     {diseaseInfo === null || diseaseInfo === '' ? loader : diseaseInfo}

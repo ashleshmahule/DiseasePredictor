@@ -38,12 +38,6 @@ class GetDisease extends Component {
         this.GetFromFlask();
         var { disease } = this.state;
         console.log({ disease });
-        // this.SendData();
-
-        // if (localStorage.getItem('diseaseName') == null && this.state.disease[0] != null && this.state.disease[0] != localStorage.getItem('diseasename')) {
-        //     localStorage.setItem('diseaseName', this.state.disease);
-        //     console.log('set');
-        // }
 
         const loader = <>
             <Spinner animation="grow" variant="danger" />
@@ -52,6 +46,11 @@ class GetDisease extends Component {
         var pred = <>
             Predicted Disease: {this.state.disease}
         </>;
+
+        var more = <>
+            <Button className="show-more-btn" as={Link} to="/ShowMore" variant="dark">Know More!</Button>
+            <Button className="show-drug-btn" as={Link} to="/ShowDrug" variant="dark">Check Which Drug May Be Effective</Button>
+        </>
 
         return (
             <>
@@ -64,7 +63,7 @@ class GetDisease extends Component {
 
                     <Row>
                         <Col>
-                            <Button className="show-more-btn" as={Link} to="/ShowMore" variant="dark">Know More!</Button>
+                            {this.state.disease === null || this.state.disease === '' ? null : more}
                         </Col>
                     </Row>
                 </Container>

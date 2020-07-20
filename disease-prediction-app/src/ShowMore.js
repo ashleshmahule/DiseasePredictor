@@ -42,7 +42,7 @@ class ShowMore extends React.Component {
                 {localStorage.getItem("diseaseName") === null || '' ? error : head}
 
                 <Container className="alignMe">
-                    <Row noGutters className="align-items-center" style={{ textAlign: 'left' }}>
+                    <Row className="align-items-center" style={{ textAlign: 'left' }}>
                         <Col md="5" sm="6" lg="5">
                             <DiseaseNameAndFreq diseaseName={localStorage.getItem("diseaseName")} />
                         </Col>

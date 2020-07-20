@@ -196,6 +196,10 @@ class FormClass extends React.Component {
         );
     }
 
+    _redirectToDrug (){
+
+    }
+
     render() {
 
         const SymptomsInput = (props) => (
@@ -205,7 +209,7 @@ class FormClass extends React.Component {
                         <Col sm="12" md="12" lg="12">
                             <Form.Label>
                                 Choose The Symptoms You Have Been Experiencing Lately
-                        </Form.Label>
+                            </Form.Label>
                         </Col>
                     </Row>
                     <Row id="symp-2" className="justify-content-md-center">
@@ -228,10 +232,8 @@ class FormClass extends React.Component {
                         </Col>
                     </Row>
                     <Button onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
-                    {this.state.showComponent ? <>
-                        <this.Predict />
-                    </>
-                        : null}
+                    
+                    {this.state.showComponent ? <><this.Predict /></> : null}
                 </Container>
             </>
         );

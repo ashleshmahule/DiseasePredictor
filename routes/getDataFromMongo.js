@@ -34,5 +34,27 @@ router.post('/getDiseaseInfo', (req, res) => {
 });
 
 
+router.post('/getDrugInfo', (req, res) => {
+    mongoClient.connect('mongodb+srv://ashlesh:admin@diseaseprediction-mltmf.mongodb.net/test', function (err, db) {
+        if (err) {
+            throw err;
+        }
+
+        console.log(req.query);
+
+        var dbObject = db.db('DiseaseInfo');
+        dbObject.collection('DrugInformation').findOne({ '_id': req.query.query }, function (err, result) {
+            if (err) throw err;
+
+            console.log(result.description);
+
+            res.send({ description: result.description, freq: result.frequency, imgUrl: result.imgUrl });
+            db.close();
+        });
+
+    });
+});
+
+
 
 module.exports = router;
