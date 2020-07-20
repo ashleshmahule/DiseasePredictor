@@ -199,7 +199,7 @@ class ForChatBotAvuCeo extends React.Component {
             <>
                 <Container id='cont'>
                     <Row id="symp-2" className="justify-content-md-center">
-                        <Col className="justify-content-md-center inputSym" sm="6" md="6" lg="6">
+                        <Col className="justify-content-md-center inputSym" sm="12" md="12" lg="12">
                             <Typeahead
                                 size="lg"
                                 clearButton
