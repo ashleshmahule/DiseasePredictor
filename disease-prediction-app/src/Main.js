@@ -6,6 +6,7 @@ import Statistics from './Statistics';
 import ShowMore from './ShowMore';
 import ShowDrug from './ShowDrug';
 import ForChatBotAvuCeo from './ForChatBotAvuCeo';
+import ForRemedizeApp from './ForRemedizeApp';
 
 const Main = () => {
   return (
@@ -16,6 +17,7 @@ const Main = () => {
       <Route exact path='/ShowMore' component={ShowMore}></Route>
       <Route exact path='/ShowDrug' component={ShowDrug}></Route>
       <Route exact path='/GetSymptoms' component={ForChatBotAvuCeo}></Route>
+      <Route exact path='/ForRemedizeApp' component={ForRemedizeApp}></Route>
     </Switch>
   );
 }
