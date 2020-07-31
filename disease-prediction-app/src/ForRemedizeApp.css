@@ -4,8 +4,8 @@
 }
 
 #symp2 {
-    margin-top: 5%;
     margin: 1%;
+    margin-top: 15%;
 }
 
 #warn {
@@ -19,6 +19,8 @@
 #check {
     margin: 2%;
     font-size: 100%;
+    width: 100%;
+    margin-top: 4%;
 }
 
 .inputSym {
