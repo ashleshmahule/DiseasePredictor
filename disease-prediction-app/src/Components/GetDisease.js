@@ -48,8 +48,8 @@ class GetDisease extends Component {
         </>;
 
         var more = <>
-            <Button className="show-more-btn" as={Link} to="/ShowMore" variant="dark">Know More!</Button>
-            <Button className="show-drug-btn" as={Link} to="/ShowDrug" variant="dark">Check Which Drug May Be Effective</Button>
+            <Button style={{margin: 4}} className="show-more-btn" as={Link} to="/ShowMore" variant="dark">Know More!</Button>
+            <Button style={{margin: 4}} className="show-drug-btn" as={Link} to="/ShowDrug" variant="dark">Check Which Drug May Be Effective</Button>
         </>
 
         return (
