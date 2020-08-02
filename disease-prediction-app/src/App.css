@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url("../src/HomeBg.jpg");
+  /* background-image: url("../src/HomeBg.jpg"); */
+  background-image: linear-gradient(to bottom right, rgb(217, 255, 253) , rgb(51, 203, 223));
   background-attachment: fixed;
   color: rgb(31, 31, 31);
   font-size: 150%;
