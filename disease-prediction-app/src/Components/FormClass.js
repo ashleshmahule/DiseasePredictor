@@ -231,7 +231,7 @@ class FormClass extends React.Component {
                             Try to choose as much symptoms as possible.
                         </Col>
                     </Row>
-                    <Button style={{width: 15}} onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
+                    <Button style={{width: 45}} onClick={this._onButtonClick} variant="success" id="check">Check!</Button>
                     
                     {this.state.showComponent ? <><this.Predict /></> : null}
                 </Container>
